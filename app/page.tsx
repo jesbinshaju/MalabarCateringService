@@ -19,34 +19,46 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/placeholder.svg?height=1080&width=1920"
             alt="Kerala cuisine spread"
             fill
-            className="object-cover"
+            className="object-cover opacity-40"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-foreground/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
         </div>
+
+        {/* Decorative gold elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl" />
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 pt-20 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-primary-foreground text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 backdrop-blur-sm border border-gold/30">
+              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+              <span className="text-gold text-sm font-medium tracking-wider uppercase">
                 Malabar Catering
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-background leading-tight text-balance">
-              {t.hero.tagline}
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-cream leading-tight text-balance">
+              {t.hero.tagline.split(" ").map((word, index) => (
+                <span key={index}>
+                  {index === 1 || index === 3 ? (
+                    <span className="text-gold">{word}</span>
+                  ) : (
+                    word
+                  )}{" "}
+                </span>
+              ))}
             </h1>
 
-            <p className="text-lg md:text-xl text-background/80 max-w-2xl mx-auto leading-relaxed text-pretty">
+            <p className="text-lg md:text-xl text-cream/70 max-w-2xl mx-auto leading-relaxed text-pretty">
               {t.hero.subtitle}
             </p>
 
@@ -54,7 +66,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
+                className="bg-gradient-to-r from-gold-dark via-gold to-gold-light hover:from-gold hover:via-gold-light hover:to-gold-dark text-black font-semibold px-8 shadow-lg shadow-gold/20 transition-all duration-300"
               >
                 <Link href="/contact">
                   {t.hero.cta}
@@ -65,7 +77,7 @@ export default function HomePage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-background/30 text-background hover:bg-background/10 font-medium px-8"
+                className="border-gold/50 text-gold hover:bg-gold/10 hover:border-gold font-medium px-8 bg-transparent"
               >
                 <Link href="/menu">{t.nav.menu}</Link>
               </Button>
@@ -75,20 +87,24 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-          <div className="w-6 h-10 rounded-full border-2 border-background/30 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 rounded-full bg-background/50 animate-bounce" />
+          <div className="w-6 h-10 rounded-full border-2 border-gold/40 flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 rounded-full bg-gold animate-bounce" />
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 md:py-32 bg-secondary">
+      <section className="py-20 md:py-32 bg-black-light">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+            <span className="text-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+              Our Services
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4 text-balance">
               {t.services.title}
             </h2>
-            <p className="text-muted-foreground text-lg">{t.services.subtitle}</p>
+            <div className="w-20 h-1 bg-gradient-to-r from-gold-dark via-gold to-gold-light mx-auto mb-6" />
+            <p className="text-cream/60 text-lg">{t.services.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -97,15 +113,15 @@ export default function HomePage() {
               return (
                 <div
                   key={service.id}
-                  className="group bg-card rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-border hover:border-primary/30"
+                  className="group bg-black rounded-xl p-8 border border-gold/20 hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
                 >
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                    <Icon className="w-7 h-7 text-gold" />
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                  <h3 className="font-serif text-xl font-semibold text-cream mb-3 group-hover:text-gold transition-colors">
                     {service.title[language]}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-cream/60 leading-relaxed">
                     {service.description[language]}
                   </p>
                 </div>
@@ -116,20 +132,23 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
-        </div>
+      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+        {/* Gold gradient accents */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6 text-balance">
+            <span className="text-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+              Get Started
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-6 text-balance">
               {language === "en"
                 ? "Ready to Create Unforgettable Moments?"
                 : "മറക്കാനാവാത്ത നിമിഷങ്ങൾ സൃഷ്ടിക്കാൻ തയ്യാറാണോ?"}
             </h2>
-            <p className="text-background/70 text-lg mb-8 max-w-2xl mx-auto">
+            <div className="w-20 h-1 bg-gradient-to-r from-gold-dark via-gold to-gold-light mx-auto mb-6" />
+            <p className="text-cream/60 text-lg mb-8 max-w-2xl mx-auto">
               {language === "en"
                 ? "Let us bring the authentic taste of Kerala to your next event. Contact us today to discuss your catering needs."
                 : "നിങ്ങളുടെ അടുത്ത പരിപാടിയിലേക്ക് കേരളത്തിന്റെ ആധികാരിക രുചി ഞങ്ങളെ കൊണ്ടുവരാൻ അനുവദിക്കൂ."}
@@ -137,7 +156,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
+              className="bg-gradient-to-r from-gold-dark via-gold to-gold-light hover:from-gold hover:via-gold-light hover:to-gold-dark text-black font-semibold px-8 shadow-lg shadow-gold/20 transition-all duration-300"
             >
               <Link href="/contact">
                 {t.hero.cta}

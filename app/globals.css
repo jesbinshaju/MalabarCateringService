@@ -4,98 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Pure Black and Gold luxury catering theme */
   --background: #000000;
   --foreground: #D4AF37;
-  --card: #0a0a0a;
+  --card: #000000;
   --card-foreground: #D4AF37;
-  --popover: #0a0a0a;
+  --popover: #000000;
   --popover-foreground: #D4AF37;
   --primary: #D4AF37;
   --primary-foreground: #000000;
-  --secondary: #0f0f0f;
+  --secondary: #0a0a0a;
   --secondary-foreground: #D4AF37;
-  --muted: #141414;
-  --muted-foreground: #b8860b;
-  --accent: #FFD700;
+  --muted: #111111;
+  --muted-foreground: #8B7355;
+  --accent: #C5A028;
   --accent-foreground: #000000;
   --destructive: #8B0000;
   --destructive-foreground: #D4AF37;
-  --border: #D4AF37;
+  --border: #2a2a2a;
   --input: #0a0a0a;
   --ring: #D4AF37;
-  --chart-1: #D4AF37;
-  --chart-2: #b8860b;
-  --chart-3: #FFD700;
-  --chart-4: #8B7500;
-  --chart-5: #DAA520;
-  --radius: 0.5rem;
-  --sidebar: #000000;
-  --sidebar-foreground: #D4AF37;
-  --sidebar-primary: #D4AF37;
-  --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #0f0f0f;
-  --sidebar-accent-foreground: #D4AF37;
-  --sidebar-border: #D4AF37;
-  --sidebar-ring: #D4AF37;
-  
-  /* Custom colors for pure black & gold luxury feel */
-  --gold: #D4AF37;
-  --gold-light: #FFD700;
-  --gold-dark: #b8860b;
-  --gold-muted: #8B7500;
-  --pure-black: #000000;
-  --black-soft: #0a0a0a;
-  --black-card: #0f0f0f;
-  --white: #ffffff;
-  --white-muted: #f5f5f5;
-}
-
-.dark {
-  --background: #000000;
-  --foreground: #D4AF37;
-  --card: #0a0a0a;
-  --card-foreground: #D4AF37;
-  --popover: #0a0a0a;
-  --popover-foreground: #D4AF37;
-  --primary: #D4AF37;
-  --primary-foreground: #000000;
-  --secondary: #0f0f0f;
-  --secondary-foreground: #D4AF37;
-  --muted: #141414;
-  --muted-foreground: #b8860b;
-  --accent: #FFD700;
-  --accent-foreground: #000000;
-  --destructive: #8B0000;
-  --destructive-foreground: #D4AF37;
-  --border: #D4AF37;
-  --input: #0a0a0a;
-  --ring: #D4AF37;
-  --sidebar: #000000;
-  --sidebar-foreground: #D4AF37;
-  --sidebar-primary: #D4AF37;
-  --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #0f0f0f;
-  --sidebar-accent-foreground: #D4AF37;
-  --sidebar-border: #D4AF37;
-  --sidebar-ring: #D4AF37;
+  --radius: 0rem;
   
   --gold: #D4AF37;
-  --gold-light: #FFD700;
-  --gold-dark: #b8860b;
-  --gold-muted: #8B7500;
+  --gold-light: #E8C84A;
+  --gold-dark: #8B7355;
   --pure-black: #000000;
-  --black-soft: #0a0a0a;
-  --black-card: #0f0f0f;
-  --white: #ffffff;
-  --white-muted: #f5f5f5;
+  --off-white: #FAF8F5;
 }
 
 @theme inline {
-  --font-sans: 'Playfair Display', 'Georgia', serif;
-  --font-serif: 'Playfair Display', 'Georgia', serif;
-  --font-body: 'Inter', 'system-ui', sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: 'Cormorant Garamond', 'Georgia', serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -115,51 +56,37 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
-  --color-gold-muted: var(--gold-muted);
   --color-pure-black: var(--pure-black);
-  --color-black-soft: var(--black-soft);
-  --color-black-card: var(--black-card);
-  --color-white: var(--white);
-  --color-white-muted: var(--white-muted);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-off-white: var(--off-white);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
-    @apply bg-pure-black text-gold;
+    @apply bg-pure-black text-off-white antialiased;
     font-family: var(--font-body);
+    font-weight: 300;
+    letter-spacing: 0.01em;
   }
   html {
     scroll-behavior: smooth;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 }
 
-/* Custom utility classes */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -167,22 +94,109 @@
   .text-pretty {
     text-wrap: pretty;
   }
-  .gold-gradient {
-    background: linear-gradient(135deg, #b8860b 0%, #D4AF37 50%, #FFD700 100%);
+  .font-display {
+    font-family: var(--font-sans);
   }
-  .gold-text-gradient {
-    background: linear-gradient(135deg, #b8860b 0%, #D4AF37 50%, #FFD700 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .font-body {
+    font-family: var(--font-body);
   }
-  .gold-border {
-    border-color: #D4AF37;
+  .gold-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
   }
-  .gold-glow {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  .gold-line-left {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, #D4AF37, transparent);
   }
-  .gold-glow-strong {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
   }
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+  .elegant-border {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  .elegant-border-hover:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+  }
+}
+
+/* Elegant decorative elements */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37);
+}
+
+.ornament::after {
+  background: linear-gradient(90deg, #D4AF37, transparent);
+}
+
+/* Refined button styles */
+.btn-gold {
+  background: transparent;
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  padding: 0.875rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.btn-gold:hover {
+  background: #D4AF37;
+  color: #000000;
+}
+
+.btn-gold-filled {
+  background: #D4AF37;
+  border: 1px solid #D4AF37;
+  color: #000000;
+  padding: 0.875rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.btn-gold-filled:hover {
+  background: transparent;
+  color: #D4AF37;
+}
+
+/* Elegant link underline */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
 }

@@ -39,20 +39,20 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-black/95 backdrop-blur-md shadow-lg shadow-gold/5 border-b border-gold/20"
-          : "bg-transparent"
+          ? "bg-black border-b border-[#D4AF37]/30 shadow-lg shadow-[#D4AF37]/10"
+          : "bg-black/80 backdrop-blur-sm"
       )}
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-light via-gold to-gold-dark flex items-center justify-center shadow-lg shadow-gold/20">
+            <div className="w-10 h-10 rounded-full gold-gradient flex items-center justify-center shadow-lg gold-glow">
               <span className="text-black font-serif font-bold text-lg">
                 M
               </span>
             </div>
-            <span className="font-serif text-xl font-semibold text-cream group-hover:text-gold transition-colors">
+            <span className="font-serif text-xl font-semibold text-[#D4AF37] group-hover:text-[#FFD700] transition-colors">
               Malabar Catering
             </span>
           </Link>
@@ -66,13 +66,13 @@ export function Navbar() {
                 className={cn(
                   "text-sm font-medium transition-colors relative py-1",
                   pathname === link.href
-                    ? "text-gold"
-                    : "text-cream/70 hover:text-gold"
+                    ? "text-[#FFD700]"
+                    : "text-[#D4AF37]/70 hover:text-[#FFD700]"
                 )}
               >
                 {t.nav[link.key]}
                 {pathname === link.href && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 gold-gradient rounded-full" />
                 )}
               </Link>
             ))}
@@ -84,7 +84,7 @@ export function Navbar() {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center gap-1 text-cream/70 hover:text-gold hover:bg-gold/10 border border-gold/30"
+              className="flex items-center gap-1 text-[#D4AF37] hover:text-black hover:bg-[#D4AF37] border border-[#D4AF37]"
             >
               <Globe className="w-4 h-4" />
               <span className="text-xs font-medium uppercase">
@@ -96,7 +96,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-cream hover:text-gold hover:bg-gold/10"
+              className="md:hidden text-[#D4AF37] hover:text-black hover:bg-[#D4AF37]"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -106,7 +106,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gold/20">
+          <div className="md:hidden mt-4 pb-4 border-t border-[#D4AF37]/30">
             <div className="flex flex-col gap-2 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -116,8 +116,8 @@ export function Navbar() {
                   className={cn(
                     "py-2 px-4 rounded-lg text-sm font-medium transition-colors",
                     pathname === link.href
-                      ? "bg-gold/20 text-gold border border-gold/30"
-                      : "text-cream/70 hover:bg-gold/10 hover:text-gold"
+                      ? "bg-[#D4AF37] text-black"
+                      : "text-[#D4AF37]/70 hover:bg-[#D4AF37]/10 hover:text-[#FFD700]"
                   )}
                 >
                   {t.nav[link.key]}

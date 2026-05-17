@@ -17,7 +17,7 @@ export default function HomePage() {
   const { language, t } = useLanguage();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-black">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
         {/* Background Image */}
@@ -26,31 +26,31 @@ export default function HomePage() {
             src="/placeholder.svg?height=1080&width=1920"
             alt="Kerala cuisine spread"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-30"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
         </div>
 
         {/* Decorative gold elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-[#D4AF37]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#D4AF37]/15 rounded-full blur-3xl" />
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 pt-20 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 backdrop-blur-sm border border-gold/30">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span className="text-gold text-sm font-medium tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/50">
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+              <span className="text-[#D4AF37] text-sm font-medium tracking-wider uppercase">
                 Malabar Catering
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-cream leading-tight text-balance">
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight text-balance">
               {t.hero.tagline.split(" ").map((word, index) => (
                 <span key={index}>
                   {index === 1 || index === 3 ? (
-                    <span className="text-gold">{word}</span>
+                    <span className="text-[#FFD700]">{word}</span>
                   ) : (
                     word
                   )}{" "}
@@ -58,7 +58,7 @@ export default function HomePage() {
               ))}
             </h1>
 
-            <p className="text-lg md:text-xl text-cream/70 max-w-2xl mx-auto leading-relaxed text-pretty">
+            <p className="text-lg md:text-xl text-[#D4AF37]/70 max-w-2xl mx-auto leading-relaxed text-pretty">
               {t.hero.subtitle}
             </p>
 
@@ -66,7 +66,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-gold-dark via-gold to-gold-light hover:from-gold hover:via-gold-light hover:to-gold-dark text-black font-semibold px-8 shadow-lg shadow-gold/20 transition-all duration-300"
+                className="gold-gradient hover:opacity-90 text-black font-semibold px-8 shadow-lg gold-glow transition-all duration-300"
               >
                 <Link href="/contact">
                   {t.hero.cta}
@@ -77,7 +77,7 @@ export default function HomePage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-gold/50 text-gold hover:bg-gold/10 hover:border-gold font-medium px-8 bg-transparent"
+                className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black font-medium px-8 bg-transparent"
               >
                 <Link href="/menu">{t.nav.menu}</Link>
               </Button>
@@ -87,24 +87,24 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-          <div className="w-6 h-10 rounded-full border-2 border-gold/40 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 rounded-full bg-gold animate-bounce" />
+          <div className="w-6 h-10 rounded-full border-2 border-[#D4AF37] flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 rounded-full bg-[#D4AF37] animate-bounce" />
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 md:py-32 bg-black-light">
+      <section className="py-20 md:py-32 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-4 block">
               Our Services
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4 text-balance">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
               {t.services.title}
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-gold-dark via-gold to-gold-light mx-auto mb-6" />
-            <p className="text-cream/60 text-lg">{t.services.subtitle}</p>
+            <div className="w-20 h-1 gold-gradient mx-auto mb-6" />
+            <p className="text-[#D4AF37]/60 text-lg">{t.services.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -113,15 +113,15 @@ export default function HomePage() {
               return (
                 <div
                   key={service.id}
-                  className="group bg-black rounded-xl p-8 border border-gold/20 hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
+                  className="group bg-black rounded-xl p-8 border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-xl hover:shadow-[#D4AF37]/20"
                 >
-                  <div className="w-14 h-14 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
-                    <Icon className="w-7 h-7 text-gold" />
+                  <div className="w-14 h-14 rounded-lg border border-[#D4AF37] flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] group-hover:text-black transition-all duration-300">
+                    <Icon className="w-7 h-7 text-[#D4AF37] group-hover:text-black transition-colors" />
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-cream mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-xl font-semibold text-[#FFD700] mb-3">
                     {service.title[language]}
                   </h3>
-                  <p className="text-cream/60 leading-relaxed">
+                  <p className="text-[#D4AF37]/60 leading-relaxed">
                     {service.description[language]}
                   </p>
                 </div>
@@ -134,21 +134,21 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-black relative overflow-hidden">
         {/* Gold gradient accents */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+          <div className="max-w-3xl mx-auto text-center border border-[#D4AF37]/30 rounded-2xl p-12 bg-black/50 backdrop-blur-sm">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-4 block">
               Get Started
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-6 text-balance">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
               {language === "en"
                 ? "Ready to Create Unforgettable Moments?"
                 : "മറക്കാനാവാത്ത നിമിഷങ്ങൾ സൃഷ്ടിക്കാൻ തയ്യാറാണോ?"}
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-gold-dark via-gold to-gold-light mx-auto mb-6" />
-            <p className="text-cream/60 text-lg mb-8 max-w-2xl mx-auto">
+            <div className="w-20 h-1 gold-gradient mx-auto mb-6" />
+            <p className="text-[#D4AF37]/60 text-lg mb-8 max-w-2xl mx-auto">
               {language === "en"
                 ? "Let us bring the authentic taste of Kerala to your next event. Contact us today to discuss your catering needs."
                 : "നിങ്ങളുടെ അടുത്ത പരിപാടിയിലേക്ക് കേരളത്തിന്റെ ആധികാരിക രുചി ഞങ്ങളെ കൊണ്ടുവരാൻ അനുവദിക്കൂ."}
@@ -156,7 +156,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-gold-dark via-gold to-gold-light hover:from-gold hover:via-gold-light hover:to-gold-dark text-black font-semibold px-8 shadow-lg shadow-gold/20 transition-all duration-300"
+              className="gold-gradient hover:opacity-90 text-black font-semibold px-8 shadow-lg gold-glow transition-all duration-300"
             >
               <Link href="/contact">
                 {t.hero.cta}

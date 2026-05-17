@@ -14,17 +14,17 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col pt-20 bg-black">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-black-light">
+      <section className="py-16 md:py-24 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-4 block">
               Our Work
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6 text-balance">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
               {t.gallery.title}
             </h1>
-            <div className="w-20 h-1 bg-gradient-to-r from-gold-dark via-gold to-gold-light mx-auto mb-6" />
-            <p className="text-xl text-cream/60">{t.gallery.subtitle}</p>
+            <div className="w-20 h-1 gold-gradient mx-auto mb-6" />
+            <p className="text-xl text-[#D4AF37]/60">{t.gallery.subtitle}</p>
           </div>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function GalleryPage() {
               <div
                 key={image.id}
                 className={cn(
-                  "group relative cursor-pointer overflow-hidden rounded-xl border border-gold/20 hover:border-gold/50 transition-all duration-300",
+                  "group relative cursor-pointer overflow-hidden rounded-xl border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all duration-300",
                   index % 5 === 0 ? "sm:col-span-2 sm:row-span-2" : ""
                 )}
                 onClick={() => setSelectedImage(image.src)}
@@ -56,12 +56,12 @@ export default function GalleryPage() {
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-cream text-sm font-medium">
+                    <p className="text-white text-sm font-medium">
                       {image.alt[language]}
                     </p>
                   </div>
                   {/* Gold corner accent */}
-                  <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-gold/30 border-l-[40px] border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-[#D4AF37] border-l-[40px] border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
             ))}
@@ -76,7 +76,7 @@ export default function GalleryPage() {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all duration-300"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full border border-[#D4AF37] flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
             onClick={() => setSelectedImage(null)}
             aria-label="Close"
           >

@@ -110,7 +110,7 @@ export default function MenuPage() {
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-[#D4AF37]/50 text-sm">
               {language === "en"
-                ? "* Menu items and availability may vary based on season and event requirements. Contact us for customized menu options."
+                ? "* Menu items and availability may vary based on season and event requirements. Contact us for customized menu options. (Only confirmed menu with the caters will be provided.)"
                 : "* മെനു ഇനങ്ങളും ലഭ്യതയും സീസണും ഇവന്റ് ആവശ്യകതകളും അടിസ്ഥാനമാക്കി വ്യത്യാസപ്പെടാം. ഇഷ്ടാനുസൃത മെനു ഓപ്ഷനുകൾക്കായി ഞങ്ങളെ ബന്ധപ്പെടുക."}
             </p>
           </div>

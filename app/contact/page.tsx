@@ -32,7 +32,7 @@ export default function ContactPage() {
     e.preventDefault();
     alert(
       language === "en"
-        ? "Thank you for your enquiry! We will get back to you soon."
+        ? "Thank you for your enquiry! We will get back to you soon. "
         : "നിങ്ങളുടെ അന്വേഷണത്തിന് നന്ദി! ഉടൻ ഞങ്ങൾ നിങ്ങളെ ബന്ധപ്പെടും."
     );
   };

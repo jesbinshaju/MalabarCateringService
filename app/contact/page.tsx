@@ -193,7 +193,7 @@ export default function ContactPage() {
                     placeholder={
                       language === "en"
                         ? "Tell us about your event..."
-                        : "നിങ്ങളുടെ ഇവന്റിനെക്കുറിച്ച് പറയൂ..."
+                        : "നിങ്ങളുടെ ഇവന്റിനെക്കുറിച്ച് പറയൂ...So that we can help you"
                     }
                     rows={5}
                     required
